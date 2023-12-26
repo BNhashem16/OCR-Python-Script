@@ -13,6 +13,10 @@ db_config = {
 table = """
 CREATE TABLE IF NOT EXISTS ocr_results (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    data TEXT NOT NULL
+    url VARCHAR(250) NULL,
+    sql_i boolean DEFAULT false,
+    xss boolean DEFAULT false,
+    data TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 """

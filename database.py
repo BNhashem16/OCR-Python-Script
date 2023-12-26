@@ -24,7 +24,7 @@ def save_to_database(data):
     create_table_if_not_exists()  # Ensure the table exists
 
     # Insert OCR result into the database
-    insert_query = "INSERT INTO ocr_results (data) VALUES (%s)"
+    insert_query = "INSERT INTO ocr_results (url, sql_i, xss, data) VALUES ('www.facebook.com', true, false, %s)"
     cursor.execute(insert_query, (data,))
 
     connection.commit()
